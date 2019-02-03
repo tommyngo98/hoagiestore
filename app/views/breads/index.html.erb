@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Breads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @breads.each do |bread| %>
+      <tr>
+        <td><%= bread.name %></td>
+        <td><%= link_to 'Show', bread %></td>
+        <td><%= link_to 'Edit', edit_bread_path(bread) %></td>
+        <td><%= link_to 'Destroy', bread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bread', new_bread_path %>

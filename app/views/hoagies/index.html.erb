@@ -1,0 +1,31 @@
+<body id="third">
+<h1>All Hoagies</h1>
+ 
+<div>
+<%= link_to 'New Hoagie', new_hoagy_path %><br>
+<%= link_to 'Back to the front page', welcome_index_path %>
+
+<table>
+  <tr>
+    <th>Bread</th>
+    <th>Ingredients</th>
+    <th>Size</th>
+    <th></th>
+  </tr>
+ 
+  <% @hoagies.each do |hoagie| %>
+    <tr>
+      <td><%= hoagie.bread%></td>
+      <td><%= hoagie.ingredients %></td>
+      <td><%= hoagie.size %></td>
+      <td><%= link_to 'Show', hoagy_path(hoagie) %></td>
+      <td><%= link_to 'Edit', edit_hoagy_path(hoagie) %></td>
+      <td><%= link_to 'Destroy', hoagy_path(hoagie),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>
+</div>
+</body>

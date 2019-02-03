@@ -1,0 +1,42 @@
+<body id="second">
+<h1>New Hoagie</h1>
+
+<div>
+<%= form_with scope: :hoagie, url: hoagies_path, local: true do |form| %>
+ 
+<% if @hoagie.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@hoagie.errors.count, "error") %> prohibited
+        this hoagie from being saved:
+      </h2>
+      <ul>
+        <% @hoagie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :bread %><br>
+    <%= form.text_area :bread %>
+  </p>
+ 
+  <p>
+    <%= form.label :ingredients %><br>
+    <%= form.text_area :ingredients %>
+  </p>
+ 
+  <p>
+    <%= form.label :size %><br>
+    <%= form.text_area :size %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', hoagies_path %>
+</div>
+</body>

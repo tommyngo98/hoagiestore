@@ -1,0 +1,27 @@
+<%= form_with(model: selfy, local: true) do |form| %>
+  <% if selfy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(selfy.errors.count, "error") %> prohibited this selfy from being saved:</h2>
+
+      <ul>
+      <% selfy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :selfy_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caption %>
+    <%= form.text_field :caption, id: :selfy_caption %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

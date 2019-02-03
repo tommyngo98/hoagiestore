@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @selfy.title %>
+</p>
+
+<%= image_tag(@selfy.image) %>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @selfy.caption %>
+</p>
+
+<%= link_to 'Edit', edit_selfy_path(@selfy) %> |
+<%= link_to 'Back', selfies_path %>
